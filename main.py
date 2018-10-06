@@ -21,6 +21,8 @@ def f1(U,B,S):
     return float(fU)
 
 
+
+
 def df1(U,B,S):
     n=U.shape[0]
     U=np.matrix(U)
@@ -52,7 +54,7 @@ def gradient_rho_constant(fun, fun_der, U0, rho, tol,args):
     while (~converged & (it < itermax)):
         it=it+1
         dfx=fun_der(xn,*args)       # valeur courante de la fonction à minimiser
-        xnp1=xn-rho*dfx             # nouveau point courant (x_{n+1})
+        xnp1=xn-rho*dfx # nouveau point courant (x_{n+1})
         fnp1=fun(xnp1,*args)
         if abs(fnp1-f)<tol:
             converged = True
@@ -72,9 +74,9 @@ A,B,S = definition_constantes()
 d=B.shape[0]
 x0 = np.ones((d,))
 
-debut = time.time()
-GradResults=gradient_rho_constant(f1,df1,x0,rho=0.02,tol=1e-6,args=(B,S))
-tps_ecoule = time.time()-debut
-print('tps écoulé (gradient_rho_constant):',tps_ecoule)
-print(GradResults['minimum'])
+#debut = time.time()
+#GradResults=gradient_rho_constant(f1,df1,x0,rho=0.02,tol=1e-6,args=(B,S))
+#tps_ecoule = time.time()-debut
+#print('tps écoulé (gradient_rho_constant):',tps_ecoule)
+#print(GradResults['minimum'])
 
